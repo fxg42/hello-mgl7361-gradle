@@ -1,0 +1,12 @@
+apply plugin: 'java'
+repositories {
+  mavenCentral()
+}
+dependencies {
+  testCompile 'junit:junit:4.9'
+}
+task(run, dependsOn:'classes', type:JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'ca.uqam.mgl7361.a2011.hello.Bonjour'
+}
+defaultTasks 'build'
